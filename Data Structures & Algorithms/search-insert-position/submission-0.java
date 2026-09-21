@@ -1,0 +1,19 @@
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length -1;
+        int guess = 0;
+        while(low <= high){
+            guess = (low + high)/2;
+            if(nums[guess] == target){
+                return guess;
+            }else if (nums[guess] > target){
+                high = guess-1;
+            }else {
+                low = guess+1;
+            }
+        }
+        return low;
+        
+    }
+}
